@@ -2,12 +2,10 @@
 #define HITTABLE_LIST_H
 
 #include "hittable.h"
+#include "rtweekend.h"
 
 #include <memory>
 #include <vector>
-
-using std::shared_ptr;
-using std::make_shared;
 
 class hittable_list : public hittable {
 public:
@@ -15,7 +13,7 @@ public:
 
     hittable_list() {}
     hittable_list(shared_ptr<hittable> object) {
-        objects.push_back(object);
+        add(object);
     }
 
     void clear() {
